@@ -1,0 +1,16 @@
+{% extends 'doctors_list.html' %}
+{% block title %} Doctors Details Page {% endblock title %}
+
+{%block content %}
+<div class="patient-entry">
+    <p>Name: {{ patient.name }}</p>
+    <p>DOB: {{ student.date_birth }}</p>
+    <p>ID Number: {{ student.stream }}</p>
+    <p>Surgery:</p>
+    {% for surgery in patient.surgery.all %}
+        <p>{{ module.name }}</p>
+    {% endfor %}
+</div>
+<p><a href="{% url 'patient_edit' patient.pk %}">Edit Patient</a></p>
+<p><a href="{% url 'patient_delete' patient.pk %}">Edit Patient</a></p>
+{% endblock content %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List Page</title>
+</head>
+<header>
+    {% if user.is_authenticated %}
+        <p>Logged In</p>
+    {% else %}
+        <p>Not logged in</p>
+        <a href="{% url 'login' %}">Doctors Details Page</a>
+</header>
+<body>
+    <h1>Doctord List Page</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
